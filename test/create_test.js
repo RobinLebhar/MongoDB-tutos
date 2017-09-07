@@ -1,7 +1,10 @@
 const assert = require('assert');
+const Book = require('../src/books');
 
-describe('Create a book', () => {
-    it('Save a book', () => {
-        assert(1+1==2);
+describe('Creation de livre', () => {
+    it('Sauvegarde un livre', () => {
+            const book1 = new Book({title:"Harry Potter"});
+            book1.save();
+
     })
 })
