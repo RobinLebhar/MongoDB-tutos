@@ -1,10 +1,27 @@
+// librairie pour discuter avec mongodb en js
 const mongoose = require('mongoose');
+const Book = require('../src/books');
 
-mongoose.connect('mongodb://localhost/users_test',{
+mongoose.Promise = global.Promise;
+// Ne passera pas a la suite si ce n'est pas fait.
+
+before((done) => {
+    mongoose.connect('mongodb://localhost/books_test',{
     useMongoClient: true,   
 });
-mongoose.connection
-    .once('open',() => console.log("Bravo tu es connecté ! Connexion établie"))
+    mongoose.connection
+    .once('open',() => done())
     .on('error',(error) => {
         console.warn('Warning',error);
     });
+})
+
+
+
+beforeEach('Supprime les anciens livres avant chaque tests' ,(done) => {
+    const { books } = mongoose.connection.collections;
+    books.drop( () => {
+        done();
+    });
+})
+
