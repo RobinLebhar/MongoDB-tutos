@@ -7,5 +7,5 @@ mongoose.connect('mongodb://localhost/books_test',{
 mongoose.connection
     .once('open',() => console.log("Bravo ! Connexion établie"))
     .on('error',(error) => {
-        console.warn('Warning',error);
+        console.warn('Erreurs : ',error);
     });
