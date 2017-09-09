@@ -7,10 +7,18 @@ const Schema = mongoose.Schema;
 const BookSchema = new Schema({
     title: {
         type : String,
-        required:[true,'Le titre est requis']
-   
-    },
-    totalPages: { type: Number, default: 0 }
+        required:[true,'Le titre est requis'],
+        
+    }, 
+    totalPages: { 
+        type: Number,
+         default: 0,
+          validate: {
+             validator: (totalPages) => totalPages < 3000,
+             message: 'Un livre doit avoir moins de 3000 pages'
+        }, 
+         
+    }
 });
 
 //Création d'un model de Book basée sur le Schema défini.
