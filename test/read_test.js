@@ -20,7 +20,7 @@ describe('Test du read', () => {
         });
     });
     
-    it('Reherche un livre par son id', (done) => {
+    it('Recherche un livre par son id', (done) => {
         Book.findOne({ _id: book1._id })
         .then((book) => {
             assert(book.title === 'Harry Potter');
