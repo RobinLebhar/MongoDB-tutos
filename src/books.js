@@ -5,7 +5,11 @@ const Schema = mongoose.Schema;
 
 //Création d'un schema Book constitué d'un titre de type String.
 const BookSchema = new Schema({
-    title:String,
+    title: {
+        type : String,
+        required:[true,'Le titre est requis']
+   
+    },
     totalPages: { type: Number, default: 0 }
 });
 
