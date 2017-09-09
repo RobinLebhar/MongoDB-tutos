@@ -21,7 +21,12 @@ before((done) => {
 beforeEach('Supprime les anciens livres avant chaque tests' ,(done) => {
     const { books } = mongoose.connection.collections;
     books.drop( () => {
+       const { users } = mongoose.connection.collections;
+       users.drop( () => {
         done();
     });
+    });
+     
+    
 })
 
