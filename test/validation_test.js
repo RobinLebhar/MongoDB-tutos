@@ -13,6 +13,13 @@ describe('Test de validation', () => {
             assert (message === 'Le titre est requis');
             done();
      });
-});
 
+      it("Test qu'un livre à moins de 3000 pages", (done) => {
+           const book1 =new Book({ title :'Les fleurs du mal', totalPages : 3001 });
+            const validationResult = book1.validateSync();
+            const message = validationResult.errors.totalPages.message
+            assert (message === 'Un livre doit avoir moins de 3000 pages');
+            done();
+     });
+});
 
