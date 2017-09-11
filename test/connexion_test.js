@@ -16,9 +16,7 @@ before((done) => {
     });
 })
 
-
-
-beforeEach('Supprime les anciens livres avant chaque tests' ,(done) => {
+beforeEach('Supprime les anciens livres avant chaques tests' ,(done) => {
     const { books } = mongoose.connection.collections;
     books.drop( () => {
         done();
