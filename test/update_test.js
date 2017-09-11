@@ -1,4 +1,3 @@
-
 const assert = require('assert');
 const Book= require('../src/books');
 
@@ -41,14 +40,5 @@ describe('Test du update', () => {
     it('Recherche un livre par id et update (findByIdAndUpdate)', (done) => {
         assertTitle(Book.findByIdAndUpdate(book1._id, { title: 'Game of Thrones'}),done);
     });
-
-    it('Incremente le nombre de pages',(done) => {
-        Book.update({title:'Moby Dick'}, { $inc :{ totalPages:3} })
-        .then( () => Book.findOne({ title: 'Moby Dick'}))
-        .then( (book) => {
-                assert(book.totalPages === 3);
-                done();
-    });
-});
 
 });
