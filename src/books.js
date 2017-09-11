@@ -13,4 +13,3 @@ const Book = mongoose.model('book',BookSchema);
 
 //Exportation du model Book pour pouvoir y accéder de l'exterieur.
 module.exports = Book;
-
