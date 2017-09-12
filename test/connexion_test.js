@@ -16,7 +16,7 @@ before((done) => {
     });
 })
 
-
+/*
 // Voir le nom en base ( tout en minuscule )
 beforeEach('Supprime les anciens livres avant chaque tests' ,(done) => {
     const { books,blogbooks,users } = mongoose.connection.collections;
@@ -28,4 +28,4 @@ beforeEach('Supprime les anciens livres avant chaque tests' ,(done) => {
         });
     }); 
 })
-
+*/
