@@ -1,4 +1,4 @@
-Àààààconst mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const assert = require('assert');
 const User = require('../src/users');
 const BlogBook = require('../src/blogBooks');
