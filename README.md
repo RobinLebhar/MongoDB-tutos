@@ -1,13 +1,9 @@
 # MongoDB-tutos
 
-```
-  > npm install
-```
-
-Lancer votre mongoDB
-
-Puis :
+Récupérer le code d'une branche spécifique
 
 ```
-  > node/test/books_test
+git clone -b 002-serveur https://github.com/RobinLebhar/GraphqlTuto.git
+
+npm install
 ```
